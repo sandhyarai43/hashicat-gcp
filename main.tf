@@ -43,9 +43,10 @@ resource "tls_private_key" "ssh-key" {
   rsa_bits  = "4096"
 }
 
-resource "google_compute_instance" "devops" {
+resource "google_compute_instance" "hashicat" {
   name         = "${var.prefix}-hashicat"
   zone         = "${var.region}-b"
+  department = "devops"
   machine_type = var.machine_type
 
   boot_disk {
